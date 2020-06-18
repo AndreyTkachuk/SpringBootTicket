@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	
+   
+   <link rel="stylesheet" type="text/css" th:href="@{/css/contact.css}"/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap" rel="stylesheet">
+  
+  <style type="text/css">
+  
+  body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  background-color:#F1B608; 
+   
+
+}
+
+header{
+font-size: 30px;
+ font-weight: 700;
+  color: #808000;
+ display: block;
+  position: relative;
+  text-transform: uppercase; 
+  border-bottom: 3px solid #CEDEC5;
+  font-size: 1.7rem; 
+  
+  }
+
+h1{
+  font-size: 40px;
+  font-weight: 800;
+  color: #55608f;
+  position: relative;
+  font-family:'Ewert', cursive;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  
+}
+
+
+ h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #BDB76B;
+  position: relative;
+  font-family: "Shojumaru", sans-serif;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  
+}
+  .container{
+    background-color: #55608f;
+    background-image: none;
+    border: 5px solid #808000;
+    border-radius: 12px;
+    height: 300px;
+    width:550px;
+    
+}
+.button {
+    border-radius: 9px;
+    border:9px;
+}
+</style>
+</head>
+
+<body>
+ <br/>
+ <br/>
+ <div align="center">
+ <h1 class="text">Spring Boot Ticket</h1>
+ <br/>
+<br/>
+<br/>
+<div align="center" class="weight"style="font-family:'Kotta One', serif;" >
+	<div class="container">
+	<br/>
+		<form th:action="@{/logout}" method="get">
+			<button class="badge badge-pill btn-danger" name="registration"
+				type="Submit"><h4>Logout</h4></button>
+				<br/>
+		</form>
+		<div align="center">
+		</div>
+		<div class="panel-group" style="margin-top:40px; color:#BDB76B;">
+			<!--  <div class="panel panel-primary">
+				<div class="panel-heading">-->
+					<span th:utext="${userName}"></span>
+				</div>
+				<div class="panel-body">
+				<a href="/index"><button type="button" class="form-button button-l margin-b" style="border-radius:15px;">Lets'Go To Application</button></a>	
+				</div>
+				<p class="admin-message-text text-center" style="color:#BDB76B" th:utext="${adminMessage}"></p>
+			</div>
+		</div>
+	</div>
+	
+<br/>
+ <br/>
+ <br/>
+ <br/>
+ <br/><SCRIPT LANGUAGE="JavaScript">
+if (window != top) top.location.href = location.href;
+</SCRIPT> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<br/>
+ <br/>
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Orders Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <link href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+
+	<link type="text/css" rel="stylesheet" th:href="@{css/table.css}" />
+	<link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
+
+
+<style type="text/css">
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  background-color:#F1B608;
+   
+
+}
+
+header{
+font-size: 30px;
+ font-weight: 800;
+ color: #808000;
+ display: block;
+  position: relative;
+  text-transform: uppercase; 
+  border-bottom: 3px solid #CEDEC5;
+  font-size: 1.7rem; 
+ 
+  }
+
+h1{
+  font-size: 45px;
+  font-weight: 800;
+  color: #55608f;
+  position: realitive;
+  font-family:'Ewert', cursive;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  
+}
+
+
+ h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #BDB76B;
+  position: relative;
+  font-family: 'Kotta One', sans-serif;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  
+}
+
+.fa {
+  padding: 0;
+  font-size: 15px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: #FFFFE0;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: #FFFFE0;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color:#FFFFE0;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: #FFFFE0;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: #FFFFE0;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: #FFFFE0;
+}
+
+ @media only screen and (max-width: 768px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+<header>
+
+<nav class="navbar-inverse" style="font-family:'Kotta One', sans-serif; background-color:#2F4F4F;">
+<div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Spring Boot Ticket</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/index">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product <span class="caret"></span></a>
+        <ul class="dropdown-menu" style="background-color:#618560; border-radius:5px;">
+           <li><a href="/ticket">Ticket</a></li>
+          <li><a href="/contact">Message</a></li>
+          <li><a href="/contactForm">Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="/cart">Shopping Cart</a></li>
+      <li><a href="/contactForm">Contact</a></li>
+       <li><a href="/news">News</a> 
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
+<br/> 
+<div align="center"  style="font-family:'Kotta One', sans-serif; color:#2F4F4F;">
+        &nbsp;&nbsp;<h1>Spring Boot Ticket</h1>	
+        <p class="text"><h4>Orders Page</h4></p>
+ </div>       
+<br/>
+<div align="center" class="weight" style="font-family: 'Kotta One', serif;">
+<div class="container">
+    <br>
+    <h3 th:text="Orders" ></h3>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Client</th>
+            <th>Status Order</th>
+            <th>Date Formation</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}"></td>
+            <td th:text="${order.ticket.Title}"></td>
+            <td>
+                <span th:if="${order.status.id == 1}" th:text="${order.status.title}" class="badge badge-danger" ></span>
+                <span th:if="${order.status.id == 2}" th:text="${order.status.title}" class="badge badge-primary" ></span>
+            </td>
+            <td th:text="${order.createAt}"></td>
+            <td>
+                <a th:if="${order.status.id == 1}" th:href="@{'/orders/ready/' + ${order.id}}" >Order Send</a>
+                <a th:href="@{'/orders/info/' + ${order.id}}" >Info</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>	
+ <SCRIPT LANGUAGE="JavaScript">
+if (window != top) top.location.href = location.href;
+</SCRIPT> 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<br/> 
+<br/>
+<br/>
+<br/> 
+<br/>
+<br/>
+<br/> 
+<br/>
+<br/>
+<br/> 
+<br/>
+<br/>
+<footer  class="page-footer font-small fixed-bottom">
+<div style="background-color:#2F4F4F;border-top:3px solid #CEDEC5; position: relative; display:block;">
+<div align="center">
+            <h5>Spring Boot Ticket</h5>
+             <div align="center" class="social">
+             <a href="http://facebook.com" class="fa fa-facebook"></a>
+             <a href="http://twitter.com" class="fa fa-twitter"></a>
+             <a href="http://google.com" class="fa fa-google"></a>
+             <a href="http://linkedin.com" class="fa fa-linkedin"></a>
+             <a href="http://youtube.com" class="fa fa-youtube"></a>
+             <a href="http://instagram.com" class="fa fa-instagram"></a>
+               
+</div>
+       <div class="copyright" style="background-color:#8FBC8F;">
+        &copy; 2020 Copyright <strong><span>com.example.demo</span></strong>. All Rights Reserved
+      </div>
+     </div>
+     </div>
+        </footer>
+        
+</body>
+</html>

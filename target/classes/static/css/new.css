@@ -1,0 +1,51 @@
+table {
+	width: 40%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	font-size: 15px;
+    font-weight: 800;
+	text-align:center;
+	border-radius:15px;
+	border: 5px solid #424242;
+}
+
+th{
+	padding: 15px;
+	border: 1px solid #424242;
+	background-color: rgba(255,255,255,0.2);
+	color: #CEDEC5;
+}
+
+td {
+	padding: 15px;
+	border: 1px solid #424242;
+	background-color: rgba(255,255,255,0.2);
+	color: #EE9C07;
+}
+
+tr {
+	padding: 15px;
+	border: 1px solid #424242;
+	
+}
+
+th {
+	text-align: center;
+}
+
+td {
+	text-align: center;
+}
+
+thead,
+	th {
+		background-color: #55608f;
+		text-align: center;
+	}
+tbody,
+td{
+	text-align: center;
+}
+
+

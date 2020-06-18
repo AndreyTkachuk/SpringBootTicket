@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>News2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <link href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+
+	<link type="text/css" rel="stylesheet" th:href="@{css/table.css}" />
+	<link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
+
+
+<style type="text/css">
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  background-color:#F1B608;
+   
+
+}
+
+header{
+font-size: 30px;
+ font-weight: 800;
+ color: #808000;
+ display: block;
+  position: relative;
+  text-transform: uppercase; 
+  border-bottom: 3px solid #CEDEC5;
+  font-size: 1.7rem; 
+ 
+  }
+
+h1{
+  font-size: 40px;
+  font-weight: 800;
+  color: #55608f;
+  position: relative;
+  font-family:'Ewert', cursive;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  
+}
+
+
+ h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #BDB76B;
+  position: relative;
+  font-family: 'Kotta One', sans-serif;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  
+}
+
+
+.fa {
+  padding: 0;
+  font-size: 15px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: #FFFFE0;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: #FFFFE0;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color:#FFFFE0;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: #FFFFE0;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: #FFFFE0;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: #FFFFE0;
+}
+
+ @media only screen and (max-width: 768px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+ .carousel-inner > .item > img, .carousel {
+ border-radius: 4px;
+  border:1px solid #966237;
+  width:100%;
+  height:200px;
+  
+}
+.texts{
+margin-top: 0.5em; 
+margin-bottom: 1em; 
+text-align:right;
+
+
+}
+ 
+ hr {
+    border: none; 
+    background-color: #424242; 
+    color: #424242; 
+    height: 1px;
+    width:95%; 
+   } 
+</style>
+
+</head>
+<body>
+<header>
+
+<nav class="navbar-inverse" style="font-family:'Kotta One', sans-serif; background-color:#2F4F4F;">
+<div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Spring Boot Ticket</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/index">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product <span class="caret"></span></a>
+        <ul class="dropdown-menu" style="background-color:#618560; border-radius:5px;">
+           <li><a href="/ticket">Ticket</a></li>
+          <li><a href="/message">Message</a></li>
+          <li><a href="/contactForm">Contact</a></li>
+        </ul>
+      </li>
+      <li><a href="/cart">Shopping Cart</a></li>
+      <li><a href="/contactForm">Contact</a></li>
+       <li><a href="/news">News</a> 
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+</header>
+<br/>
+<br/>
+<div align="center"  style="font-family:'Kotta One', sans-serif; color:#2F4F4F;" >
+				<h1>Spring Boot Ticket</h1>	
+				<p class="text"><h4>News</h4></p>	
+<br/>
+<br/> 
+<br/>
+<br/> 
+<div align="center"  style="font-family:'Kotta One', sans-serif; color:#2F4F4F;" >
+<br/>
+    <br>
+    <br/>
+    <div class="container">
+    <div align="left">
+     <img th:src="@{/images/air10.jpg}" style="width:450px;heigth:200px; border-radius:12px;" alt="News1" >
+     </div>
+    <div class="texts"  style="font-family: 'Kotta One', serif;">
+  <p><div><h4>Michael Depp and Harry Jessell discuss Cox's appointment of</p> 
+  <p>Dan York as Cox's new chief and Jessell'sforthcoming interview with </p>
+  <p>Cox Executive Chairman Steve Pruett. They also tackle the president's</p> 
+  <p>executive order threatening to take away immunity from social platforms</p> 
+  <p>if they tag content or go too far in regulating it.</p></h4></div> 
+  </div></div></div>
+    <br/>
+    <hr>
+    <br/>
+    <br/>
+    <div class="container">
+     <div align="left">
+     <img th:src="@{/images/air11.jpg}" style="width:450px;heigth:200px; border-radius:12px;"alt="News2">
+    </div>
+    <div class="texts"  style="font-family: 'Kotta One', serif;">
+    <p><div><h4>In a memo to the employees of the Minneapolis Fox O&amp;O,</p> 
+    <p>Sheila Oliver addresses concerns over safety and securityand reveals </p>
+    <p>that the station has “arranged a news sharing ‘network’</p>
+    <p> with all four news stations to cover certain aspects of this story</p> 
+    <p>to avoid sending four crews to the same place.</p> 
+     <p>This is a plan without a lot of precedent and we are grateful that</p> 
+     <p>the market stations have responded to our request so positively.</p></h4>
+    </div></div>
+    
+    <br/>
+    <hr>
+<br/> 
+<br/>
+<div class="media">
+<div class="container">
+ <div align="left">
+ <img th:src="@{/images/air12.jpg}" style="width:450px;heigth:200px; border-radius:12px;" alt="News4">
+ </div>
+<div class="texts" style="font-family: 'Kotta One', serif;">
+
+<p><div><h4>Stocks erased a loss on Friday as worries over tensions with China fizzled.</p> 
+<p>The benchmark S&amp;P 500 index rose 0.5%, recovering from a 1% slide,</p> 
+<p>after Trump outlined several actions in response to a move by China </p>
+<p>to exert more control over Hong Kong but steered clear of upending </p>
+<p>a trade pact struck with Beijing earlier this year.</p></h4> </div></div></div></div>
+</div>
+<br/>
+<hr>
+<br/>	
+<br/>
+<div class="container">
+ <div align="left">
+ <img th:src="@{/images/air4.jpg}" style="width:450px;heigth:250px; border-radius:12px;" alt="News6">
+</div>
+<div class="texts" style="font-family: 'Kotta One', serif;">
+<p><div><h4>The company, which underwent layoffs this week,</p> 
+<p>has not yet docked executive pay, which has "upset" some network staffers.</p>
+<p> However, CBS News President Susan Zirinsky was asked by an employee </p>
+<p>during a staff Zoom call whether pay cuts were considered and said that cuts</p> 
+<p>were discussed at the corporate level,though they have not been enacted.</p></h4>
+</div></div></div>
+<br/>
+<hr> 
+<br/>
+<br/>
+<div class="container">
+ <div align="left">
+ <img th:src="@{/images/air13.jpg}" style="width:450px;heigth:200px; border-radius:12px;" alt="News7">
+ </div>
+<div  class="texts" style="font-family: 'Kotta One', serif;">
+<p><div><h4>June is a busy month with important obligations for many stations.</p> 
+<p>June brings the start of summer and the start of the license</p> 
+<p>renewal cycle for television stations. Also, the FCC will hold its </p>
+<p>Open Meeting on June 9 and there is one item in particular that will interest </p>
+<p>TV stations that have adopted or plan to adopt the ATSC 3.0 standard.</p> 
+<p>And there's more.</h4></div></div></div>
+<br/>
+<br/>
+<br/>
+<div align="center" style="font-family: 'Kotta One', serif; color:#2F4F4F; border-radius:12px;" >
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+   <!--  <li class="page-item disabled">
+      <a class="page-link" href="/news" tabindex="-1">Previous</a>
+    </li>-->
+    <li class="page-item"><a class="page-link" href="/news">1</a></li>
+    <li class="page-item"><a class="page-link" href="/news1">2</a></li>
+    <li class="page-item"><a class="page-link" href="/news2">3</a></li>
+    <!-- <li class="page-item">
+      <a class="page-link" href="/news1">Next</a>
+    </li>-->
+  </ul>
+</nav>
+  </div>
+<br/> 
+<br/>
+</div>
+<br/> 
+<br/>
+<br/>
+<SCRIPT LANGUAGE="JavaScript">
+if (window != top) top.location.href = location.href;
+</SCRIPT> 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<br/> 
+<br/>
+
+<footer  class="page-footer font-small fixed-bottom">
+<div style="background-color:#2F4F4F;border-top:3px solid #CEDEC5; position: relative; display:block;">
+<div align="center">
+            <h5>Spring Boot Ticket</h5>
+             <div align="center" class="social">
+             <a href="http://facebook.com" class="fa fa-facebook"></a>
+             <a href="http://twitter.com" class="fa fa-twitter"></a>
+             <a href="http://google.com" class="fa fa-google"></a>
+             <a href="http://linkedin.com" class="fa fa-linkedin"></a>
+             <a href="http://youtube.com" class="fa fa-youtube"></a>
+             <a href="http://instagram.com" class="fa fa-instagram"></a>
+               
+</div>
+       <div class="copyright" style="background-color:#8FBC8F;">
+        &copy; 2020 Copyright <strong><span>com.example.demo</span></strong>. All Rights Reserved
+      </div>
+     </div>
+     </div>
+        </footer>
+        
+</body>
+</html>
